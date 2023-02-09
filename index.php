@@ -9,9 +9,11 @@
         <div class="container text-center mt-5 pt-5">
             <h1>Strong Password Generator</h1>
             <h2 class="mb-5">Genera Una Password Sicura</h2>
-            <div class="alert <?= $color ?>" role="alert">
-                <h5><?= $message ?><h5>
-            </div>
+            <?php if (isset($_GET['numero'])) : ?>
+                <div class="alert <?= $color ?>" role="alert">
+                    <h5><?= $message ?><h5>
+                </div>
+            <?php endif ?>
         </div>
     </header>
     <main>
@@ -20,7 +22,7 @@
                 <form class="w-75 d-flex justify-content-between" action="#" method="GET">
                     <div>
                         <h5 class="m-0">
-                            Lunghezza Voluta Password:
+                            Lunghezza Password:
                         </h5>
                         <p class="text-secondary m-0 "><i>tra un minimo di 5 ed un massimo di 30 caratteri</i></p>
                         <h5 class="mt-5">
@@ -28,9 +30,9 @@
                         </h5>
                     </div>
                     <div>
-                        <input type="number" min="5" max="30" required name="numero">
+                        <input type="number" min="5" required max="30" name="numero">
                         <div class="form-check mt-5">
-                            <input class="form-check-input" type="radio" name="repeat" id="ye">
+                            <input class="form-check-input" type="radio" name="repeat" id="yes">
                             <label class="form-check-label" for="no">
                                 Si
                             </label>
